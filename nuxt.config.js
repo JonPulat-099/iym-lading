@@ -39,11 +39,7 @@ export default {
   components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/router', '@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
-
-  routerModule: {
-    path: './router',
-  },
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/style-resources'],
