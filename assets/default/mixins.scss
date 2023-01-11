@@ -1,0 +1,160 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == xs {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == sm {
+    @media only screen and (max-width: 640px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tb {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lt {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media only screen and (max-width: 1280px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media only screen and (max-width: 1400px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    @media only screen and (max-width: 1904px) {
+      @content;
+    }
+  }
+}
+
+@mixin more__info {
+  display: inline-block;
+  text-decoration: none;
+  color: $primary_color;
+  font-size: 22px;
+  line-height: 24px;
+  margin: 80px 0 0 0;
+
+  span {
+    display: inline-block;
+    margin-left: 10px;
+    width: 17px;
+    height: 15px;
+    mask: url('~/static/icons/arrow__right.svg');
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    background: $primary_color;
+    transition: all 0.25s linear;
+  }
+
+  &:hover {
+    span {
+      transform: translateX(10px);
+    }
+  }
+
+  @include respond(xs) {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+}
+
+@mixin titles {
+  font-family: $font_sf_bold;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+
+  @include respond(lt) {
+    font-size: 30px !important;
+    line-height: 34px;
+  }
+
+  @include respond(sm) {
+    font-size: 24px !important;
+    line-height: 29px;
+  }
+
+  @include respond(xs) {
+    font-size: 20px !important;
+    line-height: 25px;
+  }
+}
+
+@mixin subtitle {
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  font-family: $font_sf_light;
+
+  @include respond(lt) {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @include respond(tb) {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+@mixin card__titles {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  font-family: $font_sf_bold;
+  
+  @include respond(sm) {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
+@mixin card__bottom {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.02em;
+  color: #b5b5b5;
+
+  .date {
+    margin: 0 10px 0 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $primary_color;
+    font-family: $font_sf_bold;
+  }
+}
+
+@mixin route__path {
+  a {
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    color: #c0c0c0;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.4s;
+
+    &:hover {
+      color: $primary_color;
+    }
+  }
+  margin: 0 0 30px 0;
+}

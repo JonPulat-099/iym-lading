@@ -1,0 +1,248 @@
+@mixin vacancies__page--title {
+  font-family: $font_sf_bold;
+  font-size: 30px;
+  line-height: 36px;
+  color: rgba(#000000, 0.8);
+  letter-spacing: -0.02em;
+
+  @include respond(lt) {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  @include respond(sm) {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  @include respond(xs) {
+    font-size: 16px;
+  }
+}
+
+.vacancies__header {
+  padding: 60px 0 !important;
+  position: relative;
+  z-index: 2;
+
+  .header__title {
+    @include titles;
+    margin: 0 0 30px 0;
+  }
+
+  .header__subtitle {
+    @include subtitle;
+  }
+
+  .header__subtitle,
+  .header__title {
+    @include respond(tb) {
+      text-align: center;
+    }
+  }
+
+  .employee {
+    width: 100%;
+    max-width: 433px;
+
+    @include respond(lt) {
+      max-width: 330px;
+    }
+
+    @include respond(tb) {
+      max-width: 300px;
+    }
+  }
+
+  @include respond(tb) {
+    .layout {
+      flex-direction: column !important;
+      .flex.xs6 {
+        max-width: 100% !important;
+        flex-grow: 100% !important;
+      }
+    }
+  }
+}
+
+.vacancies__content {
+  background: $primary_gradient;
+  position: relative;
+
+  .header__title {
+    @include titles;
+  }
+
+  .layout {
+    .flex {
+      padding: 20px;
+      min-width: 280px !important;
+      img {
+        max-width: 233px;
+        object-fit: cover;
+      }
+    }
+    .header {
+      @include subtitle;
+      font-family: $font_sf_bold;
+      margin: 20px 0;
+    }
+
+    .definition {
+      font-size: 18px;
+      line-height: 21px;
+      font-family: $font_sf_light;
+
+      @include respond(tb) {
+        font-size: 16px;
+        line-height: 1;
+      }
+    }
+
+    @include respond(tb) {
+      .flex {
+        flex-basis: 50% !important;
+        max-width: 50% !important;
+      }
+    }
+
+    @include respond(sm) {
+      .flex {
+        flex-basis: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background: $primary_gradient;
+    z-index: 1;
+  }
+
+  &::before {
+    top: -150px;
+  }
+
+  &::after {
+    bottom: -150px;
+  }
+}
+
+.steps {
+  margin: 60px 0;
+  padding: 45px 20px;
+  background: $primary_gradient;
+
+  @include respond(tb) {
+    padding: 35px 15px;
+  }
+
+  .steps__content {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 40px;
+
+    @include respond(lt) {
+      padding: 35px;
+    }
+
+    @include respond(sm) {
+      padding: 25px;
+    }
+
+    .step {
+      margin: 0 0 30px 0;
+      .step__title {
+        @include vacancies__page--title;
+        margin: 0 0 10px 0;
+      }
+
+      .step__text {
+        font-size: 18px;
+        line-height: 21px;
+        color: rgba(#000000, 0.8);
+        font-family: $font_sf_light;
+
+        @include respond(lt) {
+          font-size: 16px;
+          line-height: 1.1;
+        }
+
+        @include respond(sm) {
+          font-size: 14px;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+}
+
+.vacancies__list {
+  .list__title {
+    @include titles;
+    margin: 0 0 50px 0;
+  }
+
+  .v-expansion-panel {
+    margin: 10px 0 !important;
+    border-radius: 16px;
+
+    &::before {
+      box-shadow: 0px 2px 5px 1px #E3ECF2 !important;
+    }
+  }
+
+  .v-expansion-panel-header {
+    height: 80px;
+    @include vacancies__page--title;
+    position: relative;
+    // padding: 0 70px 0 40px;
+
+    span {
+      position: absolute;
+      right: 70px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+      color: #000000;
+
+      @include respond(tb) {
+        font-size: 18px;
+        line-height: 1.1;
+      }
+
+      @include respond(xs) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .v-expansion-panel-content {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+        margin: 0 0 10px 0;
+        a {
+          text-decoration: none;
+          color: rgba($color: #000000, $alpha: .8);
+          transition: all .3s linear;
+
+          &:hover {
+            color: $primary_color;
+          }
+        }
+      }
+    }
+  }
+
+  .theme--light.v-expansion-panels .v-expansion-panel:not(:first-child)::after {
+    display: none !important;
+  }
+}

@@ -1,0 +1,57 @@
+.market {
+  margin: 15px;
+}
+.link__download {
+  width: 240px;
+  height: 64px;
+  background: #3d9a73;
+  border-radius: 15px;
+  display: flex;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    background: #39C59B;
+  }
+
+  .link__download--icon {
+    margin-right: 20px;
+  }
+
+  .link__download--texts {
+    font-family: $font_monts_light !important;
+    text-align: left;
+    p {
+      margin: 0;
+      color: #ffffff;
+      line-height: 20px;
+    }
+
+    .market_name {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
+
+.v-rating .v-icon {
+  padding: 2px !important;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+  height: 16px !important;
+  margin: 10px 0 20px;
+  font-family: $font_monts_light !important;
+  font-size: 16px !important;
+  .rating__value {
+    display: block;
+    font-family: $font_monts_regular;
+    color: #333333;
+    line-height: 0 !important;
+  }
+}
